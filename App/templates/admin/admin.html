@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% include "nav_bar.html" %}
+{% block content %}
+
+
+<div style = "text-align: center; margin: 10%; padding: 5px; text-decoration: none;">
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('admin.view_visitors') }}" style="text-decoration: none; color: black;">View Visitors</a></button>
+
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('admin.view_staff') }}" style="text-decoration: none; color: black;">View Staff</a></button>
+
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('admin.view_shows') }}" style="text-decoration: none; color: black;">View Shows</a></button>
+</div>
+<div style = "text-align: center;">
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('admin.view_animals') }}" style="text-decoration: none; color: black;">View Animals</a></button>
+
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('admin.add_show') }}" style="text-decoration: none; color: black;">Add Show</a></button>
+
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('admin.add_animal') }}" style="text-decoration: none; color: black;">Add Animal</a></button>
+</div>
+
+
+{% endblock content %}
+
+

@@ -1,0 +1,14 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% extends "layout.html" %}
+{% include "search_form.html" %}
+{% include "nav_bar.html" %}
+{% block content %}
+
+ <h1>
+        Animal Details
+ </h1>
+
+{% include "table_temp.html" %}
+
+{% endblock content %}

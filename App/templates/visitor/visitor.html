@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% include "nav_bar.html" %}
+{% block content %}
+
+
+<div style = "text-align: center; margin: 10%; padding: 5px; text-decoration: none;">
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('visitor.search_exhibit') }}" style="text-decoration: none; color: black;">Search Exhibits</a></button>
+
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('visitor.view_exhibit_history') }}" style="text-decoration: none; color: black;">View Exhibit History</a></button>
+
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('visitor.search_show') }}" style="text-decoration: none; color: black;">Search Shows</a></button>
+</div>
+<div style = "text-align: center;">
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('visitor.view_show_history') }}" style="text-decoration: none; color: black;">View Show History</a></button>
+
+    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('visitor.search_animal') }}" style="text-decoration: none; color: black;">Search for Animals</a></button>
+</div>
+
+
+
+
+{% endblock content %}

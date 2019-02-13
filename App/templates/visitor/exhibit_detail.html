@@ -1,0 +1,76 @@
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" />
+{% import 'bootstrap/wtf.html' as wtf %}
+{% extends "layout.html" %}
+{% include "search_form.html" %}
+{% include "nav_bar.html" %}
+{% block content %}
+
+ <h1>
+        Exhibit Details
+ </h1>
+
+
+<h2>More About the Exhibit</h2>
+<table id="myTable">
+   <tr>
+       {% for k in items1[0] %}
+            <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child({{ loop.index }})')"> {{ k }} </th>
+       {% endfor %}
+   </tr>
+    {% for d in items1 %}
+   <tr class = "item">
+         {% for k in d %}
+        <td>{{ d[k] }}</td>
+         {% endfor %}
+  </tr>
+   {% endfor %}
+ </table>
+
+
+<div id="form" style = "text-align: center; margin-top: 5%; margin-bottom: 5%; margin-left: 45%; margin-right: 45%;">
+    {{ wtf.quick_form(form, form_type="horizontal") }}
+</div>
+
+<h2>More About the Animals</h2>
+<table id="myTable">
+   <tr>
+       {% for k in items2[0] %}
+            <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child({{ loop.index }})')"> {{ k }} </th>
+       {% endfor %}
+   </tr>
+    {% for d in items2 %}
+   <tr class = "item">
+         {% for k in d %}
+             {% if k == 'Link' %}
+                <td><a href = "{{ d[k] }}">Animal Details</a></td>
+             {% else %}
+                <td>{{ d[k] }}</td>
+             {% endif %}
+         {% endfor %}
+  </tr>
+   {% endfor %}
+ </table>
+
+
+ <style>
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  color: #111; font-family: 'Helvetica Neue', sans-serif;
+
+}
+
+th { border-style: solid; border-color: black; background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );}
+
+table {width: 60%; margin-left:20%; margin-right:20%; margin-top: 5%; border-color: black;}
+
+h2 {color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px;
+    font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; margin-top: 5%;}
+</style>
+
+{% endblock content %}
